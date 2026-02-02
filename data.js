@@ -1,0 +1,74 @@
+let tasks = [
+    {
+
+        title: "Complete Assignment 3",
+        description: "Implement Mongoose schema, connection logic, and CRUD routes.",
+        completed: false,
+        createdAt: new Date()
+    },
+    {
+
+        title: "Review Mongoose Slides",
+        description: "Go over 'Defining Schema' and 'Creating a Model' slides.",
+        completed: true,
+        createdAt: new Date()
+    },
+    {
+
+        title: "Grocery Shopping",
+        description: "Pick up milk, eggs, and coffee for the week.",
+        completed: false,
+        createdAt: new Date()
+    },
+    {
+
+        title: "Debug Server Connection",
+        description: "Fix the ECONNREFUSED error by using local DB_URI.",
+        completed: true,
+        createdAt: new Date()
+    },
+    {
+
+        title: "Exercise",
+        description: "30-minute evening walk.",
+        completed: false,
+        createdAt: new Date()
+    },
+    {
+
+        title: "Update README",
+        description: "Add screenshots of the successful MongoDB connection and CRUD tests.",
+        completed: false,
+        createdAt: new Date()
+    },
+    {
+
+        title: "Client Meeting",
+        description: "Discuss the project timeline and milestones for the next sprint.",
+        completed: false,
+        createdAt: new Date()
+    },
+    {
+
+        title: "Water the Plants",
+        description: "Make sure to water the succulents in the office.",
+        completed: true,
+        createdAt: new Date()
+    },
+    {
+
+        title: "Read Tech Blog",
+        description: "Catch up on the latest features in Node.js 20+.",
+        completed: false,
+        createdAt: new Date()
+    },
+    {
+
+        title: "Backup Database",
+        description: "Export the local taskManager collection to a JSON file.",
+        completed: true,
+        createdAt: new Date()
+    }
+];
+// Export the array
+module.exports = tasks;
