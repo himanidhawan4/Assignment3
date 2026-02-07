@@ -35,3 +35,16 @@ The API includes a centralized error handler that returns JSON responses for:
 404 Not Found: Attempting to access/update a task that doesn't exist.
 500 Internal Server Error: Unexpected server-side issues.
  </p>
+<h2>For Dotenv code we have used</h2>
+<p>npm install express mongoose dotenv</p>
+// Load environment variables
+require('dotenv').config(); 
+
+// Middleware to parse JSON
+app.use(express.json());
+
+// Use the URI from .env or fallback to local
+const DB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/taskManager';
+
+// Connect to MongoDB
+mongoose.connect(DB_URI);
