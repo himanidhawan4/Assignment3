@@ -1,14 +1,18 @@
-// server.js
-const app = require('./routes');
-const connectDB = require('./mongoose'); // Import the function from mongoose.js
+require('dotenv').config(); 
+const express = require('express');
+const mongoose = require('mongoose');
+const app = require('./routes'); // This pulls in all your API logic
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+const DB_URI = process.env.MONGODB_URI; 
 
-connectDB()
-    .then(() => {
-        console.log('MongoDB connected via dotenv setup!');
-        app.listen(PORT, () => {
-            console.log(`Server running on http://localhost:${PORT}`);
-        });
-    })
-    .catch(err => console.error('Connection error:', err));
+mongoose.connect(DB_URI)
+  .then(() => {
+    console.log('MongoDB Atlas connected successfully!');
+    app.listen(PORT, () => {
+      console.log(`Server running on http://localhost:${PORT}`);
+    });
+  })
+  .catch(err => {
+    console.error('Database connection error:', err);
+  });
