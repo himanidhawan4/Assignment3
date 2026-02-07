@@ -6,7 +6,7 @@ const taskSchema = new mongoose.Schema({
     title: { 
         type: String, 
         required: [true, 'Title is required'], 
-        minlength: [3, 'Title must be at least 3 characters'] // Added this!
+        minlength: [3, 'Title must be at least 3 characters']  
     },
     description: { type: String },
     completed: { type: Boolean, default: false },
@@ -22,7 +22,10 @@ app.use(express.json());
 const tasks = require('./data');
 
 // --- ROUTES ---
-
+// Welcome route for the root path
+app.get('/', (req, res) => {
+    res.send('Task Manager API is running! Try /api/tasks to see your data.');
+});
 // GET: Local data from data.js
 app.get('/data', (req, res) => {
     res.json(tasks);
